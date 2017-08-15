@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			  body{
+			  	 margin:0;
+			  }
+			  #box{
+			  	 height:200px;
+			  	 border:1px solid #000;
+			  	 /*新版的,加给父级元素的*/
+			  	 /*display:flex;*//*row设置主轴方向为水平方向,垂直方向:coluumn*/
+			  	 /*新版本下管理我们的富裕空间*/
+			  	 /*justify-content:flex-start;*//*元素在主轴开始位置,富裕空间在主轴结束位置*/
+			  	 /*justify-content: flex-end;*//*元素在主轴结束位置,富裕空间在主轴开始位置*/
+			  	 /*justify-content:center;*//*元素在主轴的中间,富裕空间在主轴的两侧*/
+			     /*justify-content: space-between;*//*富裕空间平均分配在每两个元素之间*/
+			   	 /*justify-content: space-around;*//*把富裕空间平均分配在每个元素的左右两侧*/
+			  
+			  	 /*老板的弹性盒模型,一定要 加上浏览器前缀,给父级加上display:box*/
+			     display:-webkit-box;
+			     /*-webkit-box-pack:start;*//*元素主轴的开始位置,富裕空间在主轴的结束位置*/
+		        /*-webkit-box-pack:end;*/ /*元素在主轴结束位置,富裕空间在主轴开始位置*/		
+		        /*-webkit-box-pack:center;*//*元素在主轴中间,富裕空间在主轴两侧*/	 
+		        -webkit-box-pack:justify; /*富裕空间平均分配在每两个元素之间*/
+			  	
+			  }
+			  #box div{
+			  	 width:50px;
+			  	 height:50px;
+			  	 background:red;
+			  	 font-size:40px;
+			  	 color:#fff;
+			  }
+		</style>
+	</head>
+	<body>
+		   <div id="box">
+		   	    <div>1</div>
+		   	    <div>2</div>
+		   	    <div>3</div>
+		   	    <div>4</div>
+		   </div>
+	</body>
+</html>

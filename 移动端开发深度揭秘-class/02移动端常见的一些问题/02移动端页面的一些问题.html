@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		    /*
+				出现阴影的解决办法
+		    */
+		    body{
+		    	font-family:Helvetica;/*英文字体*/
+
+		    }
+		    body *{
+		    	-webkit-text-size-adjust:100%;/*禁止文字缩放*/
+		    	-webkit-user-select:none;/*选中文字缩放*/
+		    }
+		    a,input,button{
+		    	-webkit-tap-highlight-color:rgba(0,0,0,0); /*清除点击阴影*/
+		    }
+		    input,button{
+		    	-webkit-appearence:none;
+		    	/*注意直接写border-radius是没有用的*/
+		    	border-radius:0;
+		    }
+		    /*Font Bootsting在一段文字我们没有给它设置高度的时候,在webkit内核下,文字的大小被浏览器放大了
+			解决办法:1:设置高度;
+			  		 2:设置最大高度max-height;
+
+		    */
+	</style>
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+</head>
+<body>
+		<a href="http://www.itclan.cn">我是小川川</a>
+		<input type="button" value="按钮" name="">
+</body>
+</html>

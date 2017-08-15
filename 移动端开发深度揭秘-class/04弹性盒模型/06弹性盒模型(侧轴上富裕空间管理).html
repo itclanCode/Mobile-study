@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			  body{
+			  	 margin:0;
+			  }
+			  #box{
+			  	 height:200px;
+			  	 border:1px solid #000;
+			  	 /*新版的,加给父级元素的*/
+			  	 /*display:flex;*//*row设置主轴方向为水平方向,垂直方向:coluumn*/
+			  	 /*新版本下管理我们的富裕空间*/
+			  	 /*align-items:flex-start;*//*元素在左侧开始位置,富裕空间在侧轴结束位置*/
+			  	/*align-items:flex-end;*//*元素在左侧结束位置,富裕空间在侧轴开始位置*/
+			  	/*align-items:center;*//*元素在侧轴中间位置,富裕空间在侧轴两侧*/
+			  	/*根据侧轴方向上文字的基线对齐*/
+			  	
+			  	
+			  
+			  	 /*老板的弹性盒模型,一定要 加上浏览器前缀,给父级加上display:box*/
+			      display:-webkit-box;
+			     /*-webkit-box-align:start;*//*元素在侧轴的开始位置,富裕空间在左侧轴结束位置*/
+			     /*-webkit-box-align:end;*//*元素在左侧结束位置,富裕空间在左侧开始位置*/
+			     -webkit-box-align:center;
+			     
+			  	
+			  }
+			  #box div{
+			  	 width:50px;
+			  	 height:50px;
+			  	 background:red;
+			  	 font-size:40px;
+			  	 color:#fff;
+			  }
+		</style>
+	</head>
+	<body>
+		   <div id="box">
+		   	    <div>1</div>
+		   	    <div>2</div>
+		   	    <div>3</div>
+		   	    <div>4</div>
+		   </div>
+	</body>
+</html>

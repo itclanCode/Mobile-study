@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹性盒模型-box</title>
+	</head>
+	<body>
+		   <h3>弹性盒模型--box</h3>
+		   <ul>
+		   	   <li>注意在使用弹性盒模型的时候,父元素必须要加display:box或display:inline-box</li>
+		   	   <li>flex:display:flex</li>
+		   	   <li>box:display:-webkit-box</li>
+		   </ul>
+		   <h3>box-orient定义盒模型的主轴方向</h3>
+		   <ul>
+		   	    <li>flex:flex-direction:row/column</li>
+		   	    <li>box:-webkit-box-orient</li>
+		   	    <li>horizontal水平显示</li>
+		   	    <li>vertical垂直方向</li>
+		   </ul>
+		   <h3>box-direction:元素排列顺序</h3>
+		   <ul>
+		   	   <li>flex:flex-direction:row-reverse/column-reverse</li>
+		   	   <li>box:-webkit-box-direction</li>
+		   	   <li>normal:正序</li>
+		   	   <li>reverse:反序</li>
+		   </ul>
+		   <h3>box-pack主轴方向富裕的空间管理</h3>
+		   <ul>
+		   	   <li> flex:justify-content:flex-start/flex-end/center/space-between/space-around;</li>
+		   	   <li>box:-webkit-box-pack</li>
+		   	   <li>start:有子元素在盒子左侧显示,富裕空间在右侧</li>
+		   	   <li>end:所有子元素在盒子右侧显示,富裕空间在左</li>
+		   	   <li>center:所有子元素居中</li>
+		   	   <li>justify:富裕空间在子元素之间平均分布</li>
+		   </ul>
+		   <h3>box-align侧轴方向方向富裕的空间管理</h3>
+		   <ul>
+		   	   <li>flex:align-items:flex-start/flex-end/center/baseline</li>
+		   	   <li>box:-webkit-box-align</li>
+		   	   <li>star所有子元素在据顶</li>
+		   	   <li>end所有子元素在居底</li>
+		   	   <li>center所有子元素居中</li>
+		   </ul>
+		   <h3>Box-flex定义盒子的弹性空间</h3>
+		   <ul>
+		   	   <li>flex:flex-grow</li>
+		   	   <li>box:-webkit-box-flex</li>
+		   	   <li>子元素的尺寸-盒子的尺寸*子元素的box-flex属性值/所有子元素box-flex属性值的和</li>
+		   </ul>
+		   <h3>box-oridinal-group设置元素的具体位置</h3>
+		   <ul>
+		   	   <li>flex:order</li>
+		   	   <li>box:-webkit-box-oridinal-group</li>
+		   </ul>
+	</body>
+</html>

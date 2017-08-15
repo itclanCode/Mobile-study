@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+			  var div = document.querySelector('#div');
+			  //cssTransform(div,"scale",0);
+			  //cssTransform(div,"rotate",720);
+			  //console.log(cssTransform(div,"scale"))
+			  fn1();
+			  function fn1(){
+			  	 MTween({
+			  	 	 el:div,
+			  	 	 target:{
+			  	 	 	scale:0,
+			  	 	 	rotate:720
+			  	 	 },
+			  	 	 time:2000,
+			  	 	 type:"easeOut",
+			  	 	 callBack:fn2
+			  	 });
+			  	 function fn2(){
+			  	 	 MTween({
+			  	 	 	 el:div,
+			  	 	 	 target:{
+			  	 	 	 	scale:100,
+			  	 	 	 	rotate:0
+			  	 	 	 },
+			  	 	 	 time:2000,
+			  	 	 	 type:"easeOut",
+			  	 	 	 callBack:fn1
+			  	 	 })
+			  	 }
+			  }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

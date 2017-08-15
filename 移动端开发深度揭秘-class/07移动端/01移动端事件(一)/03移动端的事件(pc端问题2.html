@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<script type="text/javascript">
+		  	  /*
+				 移动端的三大事件:
+				 	手指按下:
+				 		ontouchstart
+				 	手指移动:
+				 		ontouchmove
+				 	手指抬起
+				 	 	ontouchend
+				 注意:在移动端开发的时候,浏览器模拟器时好时坏,一般不用on的方式绑定事件函数,要用事件绑定的方式(addEventLister),那什么是事件的绑定的？
+				 在移动端:pc端的事件在移动端确实能用,不过是有一些问题的
+				 
+				 pc上的事件比移动端的事件略慢,大概是300ms左右
+				 300毫秒是怎么来的呢,早期若是做一个移动端的页面相当不简单了的
+				 safari浏览器,在你双击屏幕之后,屏幕能够缩放,通过双指往外拉
+				 此时,屏幕有可能就会被拉大,那怎么判断是点击链接和屏幕双指的连续点击呢？
+				 当你连续点击的时候,在这300毫秒之内就可以认为是屏幕缩放
+				 那么究竟这300毫秒有一些什么样的问题呢?
+				 移动端的点透:
+				 	当上层元素发生点击的时候(此时是div,红色的方块),下层元素也有点击(焦点)特性
+				 	在300ms之后,如果上层元素消失或者隐藏,目标点就会漂移到下层元素身上,就会触发点击行为
+				解决:
+					1:不要使用有点击(焦点特性的元素),这样做并不能根本的解决什么问题,单纯是不加事件是没有什么问题的,但是一旦加上了事件,就有问题了的
+					2:阻止pc的事件
+			          不过一旦阻止了pc端的事件,此刻若是链接的话,那么无法点击了,此时,还要单独的设置一下,这种方法既兼顾a标签的seo的优化,也能达到a标签跳转的目的,是一个好的解决方案
+
+
+		  	  */
+		      window.onload = function(){
+		      	 //阻止pc端的事件 
+		      	 document.addEventListener('touchstart',function(ev){
+		      	 	 ev.preventDefault();
+		      	 });
+		      	 var div = document.getElementById("div1");
+		      	 //var p = document.getElementById("p");
+		      	 var a = document.getElementById("a");
+		      
+		      	 div.addEventListener('touchend',end);
+		      	 a.addEventListener('touchstart',function(){
+		      	 	 window.location.href='http:www.itclan.cn'; // 或者是用windo.open()方法都可以
+		      	 });
+		      	 /*如果禁止了pc端的事件,那么就不要用pc端的事件了的,要用移动端的事件*/
+		      	/*p.addEventListener('click',function(){
+		      	 	 alert("点击事件");
+		      	 });*/
+		      	 /*p.addEventListener('touchstart',function(){
+		      	 	 alert("2222");
+		      	 });*/
+		      	 //鼠标抬起
+		      	 function end(){
+		      	 	this.style.display="none"
+		      	 }
+		      	
+
+		      }
+	</script>
+	<style type="text/css">
+		    #div1{
+		    	width:200px;
+		    	height:200px;
+		    	background:red;
+		    	position:absolute;
+		    	left:0;
+		    	top:0;
+		    	opacity:0.5;
+		    }
+	</style>
+</head>
+<body>
+	 <!-- <p id="p">点我啊</p> -->
+	 <a href="http:www.itclan.cn" id="a">点我</a>
+	 <div id="div1"></div>
+</body>
+</html>

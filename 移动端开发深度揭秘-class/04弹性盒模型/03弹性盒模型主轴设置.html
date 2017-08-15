@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			  body{
+			  	 margin:0;
+			  }
+			  #box{
+			  	 height:200px;
+			  	 border:1px solid #000;
+			  	 /*新版的,加给父级元素的*/
+			  	/* display:flex;*/
+			  	/* flex-direction:row;*/ /*row设置主轴方向为水平方向,垂直方向:coluumn*/
+			   /* flex-direction:column;*//*column设置主轴竖直方向的,垂直方向*/
+			  
+			  	/*老板的弹性盒模型,一定要 加上浏览器前缀,给父级加上display:box*/
+			  	display:-webkit-box;
+			  	-webkit-box-orient: horizontal;/*设置主轴水平方向的*/ 
+			   /*-webkit-box-orient:vertical;*//*设置主轴垂直方向的*/
+			   
+			  	
+			  }
+			  #box div{
+			  	 width:50px;
+			  	 height:50px;
+			  	 background:red;
+			  	 font-size:40px;
+			  	 color:#fff;
+			  }
+		</style>
+	</head>
+	<body>
+		   <div id="box">
+		   	    <div>1</div>
+		   	    <div>2</div>
+		   	    <div>3</div>
+		   	    <div>4</div>
+		   </div>
+	</body>
+</html>

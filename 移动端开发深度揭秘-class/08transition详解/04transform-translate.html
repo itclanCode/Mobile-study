@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 设置视口大小 -->
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		    #box{
+		    	width:100px;
+		    	height:100px;
+		    	border:1px solid #000;
+		    	padding:100px;
+		    }
+		    #div{
+		    	width:100px;
+		    	height:100px;
+		    	background:red;
+		    	-webkit-transform:1s;
+		    	transition:1s;
+		    }
+	</style>
+	<script type="text/javascript">
+		     /*清除掉pc端的默认事件*/
+		     /*保证下ios下禁止缩放*/
+		     document.addEventListener('touchstart',function(e){
+		     	 e.preventDefault();
+		     });
+		     window.onload = function(){
+		     	 var div = document.querySelector("#div"); //找到box
+		     	 //移动端绑定事件时,不用on的方式,用on的方式时好时坏
+		     	 div.addEventListener("touchend",function(){
+		     	 	 //移动端只需要加上webkit就可以的
+		     	 	 div.style.webkitTransform = div.style.transform = "scale(2)"; //如果啥都不写是沿着x轴斜切的,水平方向,注意如果是正直的话,那么是左上角和右下脚,如果是负值的话,那么是右上角和左下角,当然变换也是围绕着中心点来的
+		     	 	 /*可以连写:skew(-40deg) skew(40)也可以是skew(-40deg,40deg) 也可以写成(skew(40deg,-40deg))
+					 scale缩放(原始大小的多少倍)(x,y)
+					 scaleX
+					 scaleY
+					 translateX:位移px
+					 translateY:
+					 当然100%也是可以的
+					 
+
+
+		     	*/
+					
+
+
+		     	 });
+		     	 /*
+					rotate:旋转
+					deg:翻译过来就是度数的意思,旋转多少度的意思
+					skew:斜切(deg)
+					skewX:
+					skewY:
+					scale:缩放,注意是没有单位的
+
+
+		     	 */
+
+		     }
+	</script>
+</head>
+<body>
+	   <div id="box">
+	   	     <div id="div"></div>
+	   </div>
+</body>
+</html>
+<!-- 
+	 transform:变换
+	 注意一定要加前缀
+	 -webkit-transform
+	 注意:hover在移动端是没有的,只存在于pc端
+
+ -->

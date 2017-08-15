@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			  body{
+			  	 margin:0;
+			  }
+			  #box{
+			  	 height:200px;
+			  	 border:1px solid #000;
+			  	 /*新版的,加给父级元素的*/
+			  	 display:flex;/*row设置主轴方向为水平方向,垂直方向:coluumn*/
+			  	 /*新版本下管理我们的富裕空间*/
+			  	 
+			  	
+			  	
+			  
+			  	 /*老板的弹性盒模型,一定要 加上浏览器前缀,给父级加上display:box*/
+			     /*display:-webkit-box;*/
+			     /*-webkit-box-align:start;*//*元素在侧轴的开始位置,富裕空间在左侧轴结束位置*/
+			     /*-webkit-box-align:end;*//*元素在左侧结束位置,富裕空间在左侧开始位置*/
+			     /*-webkit-box-align:center;*/
+			  }
+			  #box div{
+			  	 /*新版的*/
+			  	/* flex-grow:1;*//*所有的元素都是按照比例进行运算的,此时若设置宽度就不起作用了的*/
+			  	 /*
+			  	     子元素的尺寸=盒子的尺寸*子元素的box-flex属性值/所有子元素的box-flex属性值的和
+			  	  * */
+			  	 /*老板的*/
+			  	 -webkit-box-flex:1
+			  	 width:50px;
+			  	 height:50px;
+			  	 background:red;
+			  	 font-size:40px;
+			  	 color:#fff;
+			  }
+			  #box div:nth-of-type(2){
+			  	 /*line-height:50px*/
+			  	width:100px;
+			  	/*flex-grow:2;*/
+			  }
+		</style>
+	</head>
+	<body>
+		   <div id="box">
+		   	    <div>1</div>
+		   	    <div>2</div>
+		   	    <div>3</div>
+		   	    <div>4</div>
+		   </div>
+	</body>
+</html>

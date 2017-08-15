@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 设置视口大小 -->
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		    #box{
+		    	width:100px;
+		    	height:100px;
+		    	border:1px solid #000;
+		    	padding:100px;
+		    }
+		    #div{
+		    	width:100px;
+		    	height:100px;
+		    	background:red;
+		    	-webkit-transform:1s;
+		    	transition:1s;
+		    }
+	</style>
+	<script type="text/javascript">
+		     /*清除掉pc端的默认事件*/
+		     /*保证下ios下禁止缩放*/
+		     document.addEventListener('touchstart',function(e){
+		     	 e.preventDefault();
+		     });
+		     window.onload = function(){
+		     	 var div = document.querySelector("#div"); //找到box
+		     	 //移动端绑定事件时,不用on的方式,用on的方式时好时坏
+		     	 div.addEventListener("touchend",function(){
+		     	 	 //移动端只需要加上webkit就可以的
+		     	 	 div.style.webkitTransform = div.style.transform = "rotate(90deg)";
+		     	 });
+		     	 /*
+					rotate:旋转
+					deg:翻译过来就是度数的意思,旋转多少度的意思
+		     	 */
+
+		     }
+	</script>
+</head>
+<body>
+	   <div id="box">
+	   	     <div id="div"></div>
+	   </div>
+</body>
+</html>
+<!-- 
+	 transform:变换
+	 注意一定要加前缀
+	 -webkit-transform
+	 注意:hover在移动端是没有的,只存在于pc端
+
+ -->

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>Document</title>
+<script type="text/javascript">
+	//获取html,获取的一个目的就是为了设置它的文字大小,rem的根节点
+	var html = document.documentElement;
+	//设置html的字体大小 = 可视区的宽度 / 15
+	html.style.fontSize = html.clientWidth / 15 + 'px';
+	//阻止pc和浏览器默认行为。
+	document.addEventListener('touchstart',function(ev){
+		ev.preventDefault();
+	});
+</script>
+<style>
+body{
+	margin: 0;
+}
+.wrap{
+	height: 4.68rem;
+	position: relative;
+}
+.list{
+	padding: 0;
+	margin: 0;
+	width:400%;
+	position: absolute;
+	top:0;
+	left:0;
+	list-style: none;
+}
+.list li{
+	float: left;
+	width:15rem;
+}
+.list img{
+	width:15rem;
+	display: block;
+}
+nav{
+	width:15rem;
+	height: 10px;
+	position: absolute;
+	bottom:5px;
+	z-index: 1;
+	text-align:center;
+}
+nav a{
+	width:15px;
+	height: 15px;
+	display: inline-block;
+	background: red;
+	border-radius:50%;
+	vertical-align:top;
+}
+nav a.active{
+	background:#fff;
+}
+</style>
+</head>
+<body>
+	<section class="wrap">
+		<ul class="list">
+			<li>
+				<img src="img/img.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img/img2.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img/img3.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img/img4.jpg" alt="" />
+			</li>
+		</ul>
+		<nav>
+			<a href="javascript:;" class="active"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+		</nav>
+	</section>
+<script type="text/javascript">
+	     var wrap = document.querySelector('.wrap'), // 找到wrap元素
+	     	 list = document.querySelector('.list'),
+	     	 a = document.querySelectorAll('a'),  // 获取一组的元素a
+	     	 disX = 0,   // 按下的坐标
+	     	 listL = 0,  // 当前按下list的left的值,也就是offsetLeft的值
+	     	 w = wrap.clientWidth,   //一张图片的宽度
+	     	 len = 0,
+	     	 n = 0;   // 默认第一个小点为白色
+
+	     list.innerHTML += list.innerHTML;
+	     len = list.children.length;
+	     //事件绑定
+	     list.addEventListener('touchstart',start); // 手指按下时
+	     list.addEventListener('touchmove',move);   // 手指移动时
+      	 list.addEventListener('touchend',end);
+
+	     function start(ev){
+	     	var e = ev.changedTouches[0];
+	     	disX = e.pageX; // 手指点下时,距离左边的值
+	     	list.style.transiton = 'none'; // 手指按下的时候,就把它给清掉
+	     	listL = this.offsetLeft;
+	     	/*
+				在按下的时候,要知道当前点击的是第几张图片,如果是第一张快速拉倒第五张的位置上,那么我是如何的知道我按下的是第几张呢
+				已知按下的offsetLeft值,知道每一张的宽度
+	     	*/
+	     	var num = Math.round(list.offsetLeft/w);
+	     	//处理第一个张图片的时候
+	     	if(num == 0){
+	     		num = a.length;
+	     		list.style.left = -num*w+'px'; // 因为移动是一个负的,所以前面加上一个负号
+	     	}
+	     	//如果是在最后一张的时候,顺序的把它拉回到第一张
+	     	//当数字是等于最后一张的时候
+	     	if(-num == len-1){
+	     		num = a.length-1;
+	     		list.style.left = -num*w+'px';
+	     	}
+	     	//console.log(num);
+	     }
+	     //手指移动时
+	     function move(ev){
+	     	var e = ev.changedTouches[0];
+	     	list.style.left = (e.pageX-disX)+listL+'px';
+	     }
+	     //手指离开时
+	     function end(){
+	     	 //var num = list.offsetLeft/w;/*利用四舍五入的方式,num超过0.5时,让它翻页,当小于0.5时,让它回到0的位置*/
+	     	 var num = Math.round(list.offsetLeft/w);
+	     	 list.style.transition = '.5s';
+	     	 list.style.left = num*w+'px'; // 当前图片的left值=num(几张)*w(一张有多宽)+单位
+	     	 //console.log(num);
+	     	 a[n].className = '';
+	     	 a[-num%a.length].className='active';
+	     	 n = -num%a.length;
+	     }
+
+
+	
+</script>
+</body>
+</html>
+<!-- 
+	当手指移动的时候,当触屏没有过半的时候,图片应该返回去,而当图片过半,松开手的时候,图片应该滑过去,实现图片的切换
+    这里的解决办法有:
+    当我松手的时候,确定list的offsetLeft的位置
+    当第二次移动的时候,是比较卡顿的,这是为什么呢,具体怎么解决呢
+    具体原因是transition跟我的move事件起冲突了的,解决办法就是,在移动之前要把transiton要干掉的,不然的话是会一直卡顿的
+    当拖到最后一张图片的时候,点击最后一张时,顺序的跳到第一张,当点击第一张时，立马的让它跳转到最后一张
+
+ -->

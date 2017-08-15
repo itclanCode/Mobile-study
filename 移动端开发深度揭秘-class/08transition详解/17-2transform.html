@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable" />
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		    #box{
+		    	width:100px;
+		    	height:100px;
+		    	border:1px solid #000;
+		    	padding:100px;
+		    }
+		    #div{
+		    	height:100px;
+		    	background:red;
+		    }
+	</style>
+	<script type="text/javascript">
+			 window.onload = function(){
+			 	 /*
+					elemnt.transform = {
+						rotate:40,
+						scale:200,
+						skew:
+						translate
+					}
+					console.log(element.transform.rotate);
+					如果要获取transform相关的属性,那么transform相关的设置,也必须是通过该方法设置的
+			 	 */
+			 	 function cssTransform(element,attr,val){
+			 	 	if(!element.transform){
+			 	 		element.transform = {};
+			 	 	}
+			 	 	if(typeof val == "undefined"){
+			 	 		switch(attr){
+			 	 		   case "scale":
+			 	 		   case "scaleX":
+			 	 		   case "scaleY":
+			 	 		   case "scaleZ":
+			 	 		   	   transformVal += ""+s+"("+(val/100)+")"; 
+			 	 			   break ;
+			 	 		   case "rotate":
+			 	 		   case "rotateX":
+			 	 		   case "rotateZ":
+			 	 		   case "skewX":
+			 	 		   case "skewY":
+			 	 		       transformVal +=""+s+"("+val+"deg)";
+			 	 		       break;
+			 	 		   default:
+			 	 		   	   tranformVal += ""++s+"("+val+"px";
+			 	 		}
+			 	 	}
+			 	 	console.log(transformVal);
+			 	 	element.style.WebkitTransform = element.style.transform = transformVal;
+			 	 }
+			 }
+			 var div = document.querySelector("#div");
+			 cssTransform(div,"translateX",100);
+			 cssTransform(div,"translateY",100);
+			 console.log(cssTransform(div,"translateX"));
+			 console.log(cssTransform(div,"translateY"));
+	</script>
+</head>
+<body>
+       <div id="box">
+       		<div id="box"></div>
+       </div>	
+</body>
+</html>

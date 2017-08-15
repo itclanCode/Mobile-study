@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>rem</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<script type="text/javascript">
+			 /*根据屏幕的宽度进行适配*/
+		     (function(){
+		     	var html = document.documentElement;
+		     	var hWidth = html.getBoundingClientRect().width; //html的宽度
+		     	//console.log(hWidth);html的宽度
+		     	html.style.fontSize = hWidth/16+'px'; //屏幕的宽度除以16,当前的1rem=20px
+		     })();
+	</script>
+	<style type="text/css">
+	        body{
+	        	margin:0;
+	        }
+		    div{
+		    	float:left;
+		    	width:4rem;
+		    	height:4rem;
+		    	border:1px solid #000;
+		    	/*这个时候是被挤下去的,利用盒子的怪异模型可解决*/
+		    	box-sizing:border-box;
+		    }
+		    div:nth-of-type(1){
+		    	background-color:red;
+		    }
+		    div:nth-of-type(2){
+		    	background-color:yellow;
+		    }
+		    div:nth-of-type(3){
+		    	background-color:green;
+		    }
+		    div:nth-of-type(4){
+		    	background-color:pink;
+		    }
+	</style>
+</head>
+<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+</body>
+</html>
+<!-- 
+    rem/em(根据父节点)
+    root:根节点点的字体大小进行计算的
+
+
+
+ -->

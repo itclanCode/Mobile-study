@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<h3>内容</h3>
+		<p>陀螺仪相关事件,及相关兼容处理,摇一摇功能实现,类似淘宝双十一仿VR的3d全景场</p>
+		<h3>devicemotion(检测手机晃动)</h3>
+		-accelerationIncludingGravity 加速度对象
+		-x x方向速度
+		-y y方向加速度
+		-z z方向加速度
+		-IOS和安卓的差异
+		var u = navigator.userAgent;
+		var isAndroid = u.indexOf('Android')>1 || u.indexOf('Adr')>-1;
+		var isiOS = !!u.match(/\(i[^;])+(u;)?CPU.++Mac OS X/);
+		
+</body>
+</html>

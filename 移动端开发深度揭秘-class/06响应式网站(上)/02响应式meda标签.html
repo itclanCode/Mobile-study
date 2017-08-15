@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		        #box{
+		        	width:100px;
+		        	height:100px;
+		        	background:red;
+		        }
+		        /*查看媒体的一个类型*/
+		        /*在tv上是粉色*/
+			    @media braille{
+			    	#box{
+			    		background-color:green;
+			    	}
+			    }
+			    @media tv{
+			    	/*在tv上是粉色*/
+			    	#box{
+			    		background:pink;
+			    	}
+			    }
+		</style>
+	</head>
+	<body>
+			<div id="box"></div>
+	</body>
+</html>
+<!--
+	@media:媒体查询
+	braille:盲文触觉设备
+	embossed:盲文打印机
+	print:手持设备
+	projection:打印预览
+	screen:彩屏设备
+	speech:'听觉'类似的媒体类型
+	tty:不适用像素的设备
+	tv:电视
+	
+	
+	
+-->

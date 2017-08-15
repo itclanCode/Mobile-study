@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+			#box{
+				width:100px;
+				height:100px;
+				border:1px solid #000;
+				padding:100px;
+				-webkit-perspective:200px;
+				perspective-origin:100px bottom;
+			}
+			#div{
+				width:100px;
+				height:100px;
+				background:red;
+				transition:1s;
+				-webkit-transform-style:preserve-3d;
+				transform-style:preserve-3d;
+			}
+			#div span{
+				width:100px;
+				height:100px;
+				display:block;
+				background:yellow;
+				-webkit-transform:rotateX(60deg);
+				transform:rotateX(60deg);
+			}
+	</style>
+	<script type="text/javascript">
+		     window.onload = function(){
+		     	 document.addEventListener('touchstart',function(e){
+		     	 	 e.preventDefault();
+		     	 })
+		     	 var div = document.querySelector("#div");
+		     	 div.addEventListener('touchend')
+		     	 div.style.WebkitTransform = div.style.transform = "rotateY(360deg)";
+		     }
+		     /*
+				 rotateX/rotateY/rotateZ/rotate3d
+				 translateX/translateY/translateZ/translate3d
+				 perspective 井深(我在多远之外来看这个元素)
+				 加给要做3d变换的元素的父级
+				 perspective-origin:center cebter; //视野方向
+				 transform-style:元素在做3d变换,是否保留子元素的3d变换
+				 flat 不保留
+				 preserve-3d:保留子元素3D变换
+
+		     */
+	</script>
+</head>
+<body>
+		<div id="box">
+				<div id="div">
+					  <span></span>
+				</div>
+		</div>
+</body>
+</html>

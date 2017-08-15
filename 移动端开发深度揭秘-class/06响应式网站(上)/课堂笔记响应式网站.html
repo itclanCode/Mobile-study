@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		   <h3>什么是响应式布局</h3>
+		   <p>一个网站能够兼容多个终端,并且在各个终端都可以有很好的展示体验</p>
+		   <h3>bootstrap</h3>
+		   <ul>
+		   	    <li>栅格参数</li>
+		   	    <li>.col-xs- 超小屏幕手机<768px></li>
+		   	    <li>.col-sm- 小屏幕 平板(>=768px)</li>
+		   	    <li>.col-md- 中等屏幕 桌面显示器(>=992px)</li>
+		   	    <li>.col-lg- 大屏幕 大桌面显示器(>=1200px)</li>
+		   	    <li>列偏移</li>
+		   	    <li>.col-md-offset-* 类可以将列向右侧偏移</li>
+		   	    <li>.col-md-push-*和.col-md-pull-*</li>
+		   	    <li>显示隐藏</li>
+		   	    <li>visible-md,hidden-md</li>
+		   </ul>
+		   <h3>媒体类型</h3>
+		   <ul>
+		   	    <li>all所有媒体</li>
+		   	    <li>braille盲文触觉设备</li>
+		   	    <li>embossed打印机</li>
+		   	    <li>print手持设备</li>
+		   	    <li>projection打印预览</li>
+		   	    <li>screen彩屏设备</li>
+		   	    <li>speech"听觉"类似的媒体类型</li>
+		   	    <li>tty不适用像素的设备</li>
+		   	    <li>tv电视</li>
+		   </ul>
+		   <h3>关键字</h3>
+		   <ul>
+		   	    <li>and 连接
+		   	    	<ul>
+		   	    		 <li>@media all and(min-width:1201px)</li>
+		   	    	</ul>
+		   	    </li>
+		   	    <li>not
+		   	    	<ul>
+		   	    		<li>关键字是用来排除某种特定的媒体类型</li>
+		   	    		<li>@media not</li>
+		   	    	</ul>
+		   	    </li>
+		   	    <li>
+		   	    	only
+		   	    	<ul>
+		   	    		<li>某种特定的媒体类型</li>
+		   	    		<li>@media only tv</li>
+		   	    	</ul>
+		   	    </li>
+		   </ul>
+		   <h3>Css3响应式布局</h3>
+		   <ul>
+		   	   <li>媒体特性</li>
+		   	   <li>width文档宽度</li>
+		   	   <li>orientaion 横竖屏(portrait/landscape)</li>
+		   	   <li>@media()</li>
+		   </ul>
+		   <h3>样式引入方式</h3>
+		   <ul>
+		   	   <li>样式表中末尾添加</li>
+		   	   <li>@media all and(min-width:600px{})</li>
+		   	   <li>link标签
+		   	   	   <ul>
+		   	   	   	   <li><link rel="stylesheet" href="" media="all and(min-width:600px)" /></li>
+		   	   	   </ul>
+		   	   </li>
+		   </ul>
+		   <h3>写在样式表头部</h3>
+		   <ul>
+		   	   <li>@import url()(max-width:xxpx):注意float:none优先级的处理,当引入的时候,后者会覆盖前者</li>
+		   </ul>
+		   <h3>bootstrap</h3>
+		   <ul>
+		   	    <li>引入
+		   	    	<ul>
+		   	    		 <li>移动端的视口设置</li>
+		   	    		 <li>css:<input href="css/bootstrap.min.css" rel="stylesheet"></li>
+		   	    	</ul>
+		   	    </li>
+		   	    <li>ie9以下:</li>
+		   	    <!--
+		   	    	<!-- [if it IE 9]>
+		   	    		<script src="js/h5.js"></script>
+		   	    		<script src="js/response.js"></script>
+		   	    	<![endif]>
+		   	    	jq:<script src="js/jq.js"></script>
+		   	    	js:<script src="js/bootstrap.min.js"></script>
+		   	    -->
+		   </ul>
+		   <h3>bootstrap</h3>
+		   <ul>
+		   	   <li>布局容器</li>
+		   	   <li>.container固定宽度</li>
+		   	   <li>.container-fluid(100%宽度)</li>
+		   </ul>
+		   <h3>row</h3>
+		   <ul>
+		   	   <li>行(row),必须包含在.container(固定宽度)或.container-fluid(100%宽度)中</li>
+		   	   <li>column:只有列(column),可以作为行(row),的直接子元素</li>
+		   </ul>
+		   <h3>栅格参数</h3>
+		   <ul>
+		   	   <li>.col-xs- 超小屏幕手机</li>
+		   	   <li>.col-sm- 小屏幕 平板(>=768px)</li>
+		   	   <li>.col-md- 中等屏幕 桌面显示器(>=992px)</li>
+		   	   <li>.col-lg  大屏幕大桌面显示器(>=1200px)</li>
+		   	   <li>列偏移
+		   	   	    <ul>
+		   	   	    	 <li>.col-md-offset*:类可以将列向右侧偏移</li>
+		   	   	    	 <li>列排序:.col-md-push-*和.col-md-pull-*</li>
+		   	   	    	 <li>显示隐藏visible-md,hidden-md</li>
+		   	   	    </ul>
+		   	   </li>
+		   </ul>
+	</body>
+</html>

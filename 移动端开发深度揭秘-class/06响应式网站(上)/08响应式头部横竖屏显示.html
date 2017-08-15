@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				body{
+					margin:0;
+				}
+				div{
+					height:100px;
+					border:1px solid #000;
+					box-sizing:border-box;
+					float:left;
+				}
+				/*怎么检测横竖屏显示*/
+				@media (orientation portrait){
+					div{
+						background-color:yellow;
+					}
+				}
+				@media (orientation:landscape){
+					div{
+						background-color:green;
+					}
+				}
+		</style>
+	</head>
+	<body>
+		  <div>1</div>
+	</body>
+</html>
+<!--
+	@media(orientation:portait)
+	         屏幕垂直
+	@media(orientation:landscape)
+	        屏幕水平
+	
+-->
