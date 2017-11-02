@@ -1,0 +1,16 @@
+@rem :77rem;
+*{
+    margin: 0;;
+    padding: 0;
+}li
+{
+    list-style: none;
+}
+.side
+{
+    max-width: 540px;
+    height:310/@rem;
+    border: 1px solid #000;
+	margin:auto;
+}
+/*# sourceMappingURL=%E8%BD%AE%E6%92%AD.css.map */

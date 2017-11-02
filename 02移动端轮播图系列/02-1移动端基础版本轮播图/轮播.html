@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>础版本轮播</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script>
+    (function() {
+        autoRem();
+        window.onresize = function() {
+            autoRem();
+        }
+
+        function autoRem() {
+            var html = document.querySelector('html'); // 获取html
+            var width = html.getBoundingClientRect().width; // 获取浏览器窗口的宽度
+            if (width > 540) {
+                width = 540;
+            } else {
+                html.style.fontSize = width / 10 + 'px'; // 分成10等分
+            }
+
+        }
+        // 去除橡皮经的效果
+        document.addEventListener('touchmove',function(e){
+            e.preventDefault();
+        })
+
+    })()
+    </script>
+</head>
+
+<body>
+    <div class="slide">
+        <ul>
+            <li><img src="img/slide2.jpg" width="100%"  height="100%" alt=""></li>
+            <li><img src="img/slide3.jpg" width="100%"  height="100%" alt=""></li>
+            <li><img src="img/slide1.jpg" width="100%"  height="100%" alt=""></li>
+        </ul>
+        <div class="dot">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+   <script src="js/lunbo.js"></script>
+</body>
+
+</html>
